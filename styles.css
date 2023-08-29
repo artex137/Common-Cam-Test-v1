@@ -35,3 +35,14 @@ body {
     background: transparent;
     z-index: 10; /* Overlay on top of the video player */
 }
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    z-index: 9999;  /* Ensure it's on top of everything */
+    transition: opacity 0.5s;  /* Optional: For a fade-out effect */
+}
