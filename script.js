@@ -5,5 +5,5 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
             overlay.style.display = "none";
         }, 500);  // matches the CSS transition duration
-    }, 6000);  // 6 seconds
+    }, 7000);  // 7 seconds
 });
