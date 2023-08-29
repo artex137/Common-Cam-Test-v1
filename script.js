@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const embed = new Twitch.Embed("twitch-embed", {
+        width: "100%",
+        height: "100%",
+        channel: "commoncam1",
+        parent: ["artex137.github.io"]
+    });
+
     function showLoadingOverlay() {
         const overlay = document.querySelector(".loading-overlay");
         overlay.style.display = ""; // Make sure it's visible
@@ -12,7 +19,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 7000);  // 7 seconds
     }
 
-    showLoadingOverlay();  // Initial load
+    // Show initial loading screen
+    showLoadingOverlay();
+
+    embed.addEventListener(Twitch.Embed.VIDEO_PLAY, function() {
+        // Start the 7-second timer here
+        showLoadingOverlay();
+    });
 
     document.addEventListener("visibilitychange", function() {
         if (document.visibilityState === "visible") {
